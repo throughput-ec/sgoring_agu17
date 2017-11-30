@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{
+			"id":"location",
+			"group":1
+		},
+		{"id":"coordinates","group":2},
+		{"id":"Street Addresses", "group":2},
+		{
+			"id":"address",
+		 	"group":3, 
+		 	"resource":"Neotoma", 
+		 	"format":"1232 Nowhere St, St Louis MO, 54543, USA"},
+		{
+			"id":"streetAddress",
+			"group":3, 
+			"resource":"schema.org", 
+		    "format":"38 avenue de l'Opera"},
+		{
+			"id":"informal",
+			"group":3,
+			"resource":"http://www.databaseanswers.org/data_models/customers_and_addresses/index.htm",
+			"format":"Line1\nLine2\nLine3\nCity\nCountry_Province\nPostalCode\nCountryId\nOtherDetails"
+		}
+	],
+	"links":[
+		{"source":"location", "target":"coordinates", "value":1},
+		{"source":"location", "target":"Street Addresses", "value":1},
+		{"source":"Street Addresses", "target":"address", "value":1},
+		{"source":"Street Addresses", "target":"streetAddress", "value":1},
+		{"source":"Street Addresses", "target":"informal"},
+		{"source":"location", "target":"coordinates", "value":1}
+	]
+}

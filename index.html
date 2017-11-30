@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Connecting the Paleogeosciences</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/sjg_custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,13 +24,79 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section id='title-slide'>
+						<h1>Connecting data standards to promote interdisciplinary research in the paleogeosciences</h1>
+					    <p><h2>PalEON, Neotoma, THROUGHPUT</h2>
+					    <div>
+					    	<p>Simon Goring, Stephen Richard, Jack Williams, Andria Dawson</p>
+					    </div>
+					    <div style="background: rgba(109, 121, 115, 0.8) ; box-shadow:  2px 2px #3F3931;">
+							<img src="images/Packrat.svg" height=80px/>   
+							<img src="images/UW-Madison_logo.svg" height=80px/>   
+							<img src="images/logo_earthcube_full_horizontal.png" height=80px/>   
+							<img src="images/FlyoverCountry.svg" height=80px>
+						</div>
+					</section>
+					<section id='title-slide' data-state="secondary">
+						<h2>Collaborators</h2>
+						<h3>PalEON</h3>
+						Steve Jackson, Jason McLachlan, Chris Paciorek, Mevin Hooten, John Tipton, Jenn Marlon
+						<h3>Neotoma</h3>
+						Eric C. Grimm, Russ Graham, Allan Ashworth, Jessica Blois, Mike Stryker, Steve Crawford
+						<h3>EarthCube</h3>
+						Mark Uhen, Amy Myrbo, Nick McKay, Anders Noren, Julian Jenkins, Kerstin Lehnert, Doug Fils
+					</section>
+					<section data-state="tertiary">
+						<h1>Related Presentations</h1>
+						<ul>
+							<li>Poster Session this afternoon</li>
+							<li>EarthCube TownHall</li>
+							<li>PalEON and Neotoma (Dawson)</li>
+						</ul>
+					</section>
+				</section>
+				<section id='backgrounder'>
+					<section data-background="images/noun_1285481_cc.svg" data-background-size="50%" data-state="fifty secondary">
+
+						<h1>Data Friction is a<br>"Time-To-Science" Problem</h1>
+
+					</section>
+					<section>
+						<img src="images/DawsonJacksonScience.jpg">	
+					</section>
+					<section data-state="secondary">
+						<object type="image/svg+xml" data="images/problems_circle.svg" aria-label="A central circle, with the word Climate Change, surrounded by smaller circles representing the different disciplines interested in climate change questions." width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section data-state="secondary">
+						<object type="image/svg+xml" data="images/multi_neotoma.svg" aria-label="A logo for the Neotoma paleoecological database with lines radiating to multiple projects in different scientific disciplines">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section data-state="tertiary">
+						<blockquote>All recognize metadata’s potential value, but when the rubber meets the road, an unfunded mandate to be altruistic (and simultaneously to lose one’s own tried-and-true local bricolage with data structures) does not prove highly attractive. <b>Introduced in order to reduce data friction, metadata creates its own kind of friction</b>.</blockquote>
+					</section>
+				</section>
+				<section id='case-study'>
+					<section>
+						<h1>Case Studies</h1>
+					</section>
+				<section id='standards'>
+					<section>
+						Standards
+					</section>
+					<section id="d3">
+						<svg width="960" height="600"></svg>
+					</section>
+				<section id='conclusion'>Questions</section>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -45,5 +111,84 @@
 				]
 			});
 		</script>
+
+		<script>
+
+			var svg = d3.select("svg"),
+			    width = +svg.attr("width"),
+			    height = +svg.attr("height");
+
+			var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+			var simulation = d3.forceSimulation()
+			    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+			    .force("charge", d3.forceManyBody())
+			    .force("center", d3.forceCenter(width / 2, height / 2));
+
+			d3.json("data/locations.json", function(error, graph) {
+			  if (error) throw error;
+
+			  var link = svg.append("g")
+			      .attr("class", "links")
+			    .selectAll("line")
+			    .data(graph.links)
+			    .enter().append("line")
+			      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
+			      .attr("stroke","#ffffff");
+
+			  var node = svg.append("g")
+			      .attr("class", "nodes")
+			    .selectAll("circle")
+			    .data(graph.nodes)
+			    .enter().append("circle")
+			      .attr("r", 5)
+			      .attr("fill", function(d) { return color(d.group); })
+			      .call(d3.drag()
+			          .on("start", dragstarted)
+			          .on("drag", dragged)
+			          .on("end", dragended));
+
+			  node.append("title")
+			      .text(function(d) { return d.id; });
+
+			  simulation
+			      .nodes(graph.nodes)
+			      .on("tick", ticked);
+
+			  simulation.force("link")
+			      .links(graph.links);
+
+			  function ticked() {
+			    link
+			        .attr("x1", function(d) { return d.source.x; })
+			        .attr("y1", function(d) { return d.source.y; })
+			        .attr("x2", function(d) { return d.target.x; })
+			        .attr("y2", function(d) { return d.target.y; });
+
+			    node
+			        .attr("cx", function(d) { return d.x; })
+			        .attr("cy", function(d) { return d.y; });
+			  }
+			});
+
+			function dragstarted(d) {
+			  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+			  d.fx = d.x;
+			  d.fy = d.y;
+			}
+
+			function dragged(d) {
+			  d.fx = d3.event.x;
+			  d.fy = d3.event.y;
+			}
+
+			function dragended(d) {
+			  if (!d3.event.active) simulation.alphaTarget(0);
+			  d.fx = null;
+			  d.fy = null;
+			}
+
+			</script>
+
 	</body>
 </html>
