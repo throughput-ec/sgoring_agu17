@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/css" href="svg.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400">
+  <g transform="translate(97.137 22.768)">
+    <circle cx="196.55" cy="180.57" r="126.47" fill="#f26768" stroke="#fff" stroke-width="10"/>
+    <circle cx="196.55" cy="45.32" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" opacity=".9"/>
+    <circle cx="290.5" cy="86.95" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" opacity=".9"/>
+    <circle cx="331.81" cy="180.57" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" opacity=".9"/>
+    <circle cx="290.5" cy="272.66" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" opacity=".9"/>
+    <circle cx="196.55" cy="315.83" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" opacity=".9"/>
+    <circle cx="-100.84" cy="86.95" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" transform="scale(-1 1)" opacity=".9"/>
+    <circle cx="-62.73" cy="180.57" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" transform="scale(-1 1)" opacity=".9"/>
+    <circle cx="-100.84" cy="272.66" r="25.71" fill="#9fdbd1" stroke="#fff" stroke-width="5" transform="scale(-1 1)" opacity=".9"/>
+    <text x="196.37" y="163.86" style="line-height:125%;-inkscape-font-specification:'Raleway Semi-Bold'" font-weight="600" font-size="30" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="196.37" y="163.86" style="-inkscape-font-specification:'Raleway Semi-Bold';text-align:center" font-size="45" text-anchor="middle">climate</tspan><tspan x="196.37" y="220.11" style="-inkscape-font-specification:'Raleway Semi-Bold';text-align:center" font-size="45" text-anchor="middle">change</tspan>
+    </text>
+    <text x="333.41" y="279" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="333.41" y="279">ecology</tspan>
+    </text>
+    <text x="133.01" y="5.84" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="133.01" y="5.84">economics</tspan>
+    </text>
+    <text x="333.66" y="80.32" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="333.66" y="80.32">political</tspan><tspan x="333.66" y="111.57">sciences</tspan>
+    </text>
+    <text x="116.24" y="371.66" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="116.24" y="371.66">paleoecology</tspan>
+    </text>
+    <text x="370.45" y="171.29" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="370.45" y="171.29">climate</tspan><tspan x="370.45" y="202.54">modeling</tspan>
+    </text>
+    <text x="56.54" y="266.04" style="line-height:125%;-inkscape-font-specification:Raleway;text-align:end" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0" text-anchor="end">
+      <tspan x="56.54" y="266.04">earth</tspan><tspan x="56.54" y="297.29">sciences</tspan>
+    </text>
+    <text x="-53.55" y="93.28" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="-53.55" y="93.28">sociology</tspan>
+    </text>
+    <text x="-99.01" y="186.91" style="line-height:125%;-inkscape-font-specification:Raleway" font-size="25" font-family="Raleway" letter-spacing="0" word-spacing="0">
+      <tspan x="-99.01" y="186.91">psychology</tspan>
+    </text>
+  </g>
+</svg>
