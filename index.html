@@ -12,58 +12,49 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<section id='title-slide'>
-						<h1>Connecting data standards to promote interdisciplinary research in the paleogeosciences</h1>
-					    <p><h2>PalEON, Neotoma, THROUGHPUT</h2>
+						<h1>Connected data standards for interdisciplinary science</h1>
+					    <h2>PalEON, Neotoma, THROUGHPUT</h2>
 					    <div>
-					    	<p>Simon Goring, Stephen Richard, Jack Williams, Andria Dawson</p>
+					    	<br><p>Simon Goring, Stephen Richard, Jack Williams, Andria Dawson</p><br><br>
 					    </div>
-					    <div style="background: rgba(109, 121, 115, 0.8) ; box-shadow:  2px 2px #3F3931;">
+					    <div style="background: rgba(200, 200, 200, 0.4) ; box-shadow:  2px 2px #3F3931;">
 							<img src="images/Packrat.svg" height=80px/>   
 							<img src="images/UW-Madison_logo.svg" height=80px/>   
 							<img src="images/logo_earthcube_full_horizontal.png" height=80px/>   
 							<img src="images/FlyoverCountry.svg" height=80px>
 						</div>
 					</section>
-					<section id='title-slide' data-state="secondary">
+
+					<section id="collaborators" data-state="secondary">
 						<h2>Collaborators</h2>
 						<h3>PalEON</h3>
-						Steve Jackson, Jason McLachlan, Chris Paciorek, Mevin Hooten, John Tipton, Jenn Marlon
+						<p style="text-align:left">Steve Jackson, Jason McLachlan, Chris Paciorek, Mevin Hooten, John Tipton, Jenn Marlon</p>
 						<h3>Neotoma</h3>
-						Eric C. Grimm, Russ Graham, Allan Ashworth, Jessica Blois, Mike Stryker, Steve Crawford
+						<p style="text-align:left">Eric C. Grimm, Russ Graham, Allan Ashworth, Jessica Blois, Mike Stryker, Steve Crawford</p>
 						<h3>EarthCube</h3>
-						Mark Uhen, Amy Myrbo, Nick McKay, Anders Noren, Julian Jenkins, Kerstin Lehnert, Doug Fils
+						<p style="text-align:left">Mark Uhen, Amy Myrbo, Nick McKay, Anders Noren, Julian Jenkins, Kerstin Lehnert, Doug Fils</p>
 					</section>
-					<section data-state="tertiary">
+					
+					<section data-state="tertiary" id="related">
 						<h1>Related Presentations</h1>
 						<ul>
-							<li>Poster Session this afternoon</li>
-							<li>EarthCube TownHall</li>
+							<li><b>IN33C Posters</b>: <small>Facilitating Interdisciplinary Geosciences by Limiting Data Friction: Approaches and Outcomes - Wednesday, 13 December 2017 @ 13:40 - 18:00</small></li>
+							<li><b>EarthCube TownHall</b></li>
 							<li>PalEON and Neotoma (Dawson)</li>
 						</ul>
 					</section>
 				</section>
 				<section id='backgrounder'>
-					<section data-background="images/noun_1285481_cc.svg" data-background-size="50%" data-state="fifty secondary">
+					<section data-state="fifty secondary">
 
 						<h1>Data Friction is a<br>"Time-To-Science" Problem</h1>
 
-					</section>
-					<section>
-						<img src="images/DawsonJacksonScience.jpg">	
 					</section>
 					<section data-state="secondary">
 						<object type="image/svg+xml" data="images/problems_circle.svg" aria-label="A central circle, with the word Climate Change, surrounded by smaller circles representing the different disciplines interested in climate change questions." width="70%">
@@ -71,21 +62,81 @@
 						</object>
 					</section>
 					<section data-state="secondary">
-						<object type="image/svg+xml" data="images/multi_neotoma.svg" aria-label="A logo for the Neotoma paleoecological database with lines radiating to multiple projects in different scientific disciplines">
+						<img src="images/DawsonJacksonScience.jpg">	
+						<p class="caption" style="text-align: right;">Dawson <i>et al</i>. 2014 <i>Science</i></p>
+					</section>
+					<section data-state="secondary" id="workflows">
+						<object type="image/svg+xml" data="images/multi_neotoma.svg" aria-label="A logo for the Neotoma paleoecological database with lines radiating to multiple projects in different scientific disciplines" width=70%>
 							Your browser does not support SVG
 						</object>
 					</section>
-					<section data-state="tertiary">
-						<blockquote>All recognize metadata’s potential value, but when the rubber meets the road, an unfunded mandate to be altruistic (and simultaneously to lose one’s own tried-and-true local bricolage with data structures) does not prove highly attractive. <b>Introduced in order to reduce data friction, metadata creates its own kind of friction</b>.</blockquote>
+					<section data-state="tertiary" id="xml_page">
+						<object type="image/svg+xml" data="images/xml_text.svg" aria-label="A block of XML code pulled from Neotoma's DataCite markup." width="100%">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section data-state="tertiary" id="quote">
+						<div width=100%><p style="size:0.7em;text-align:left;color:black;">All recognize metadata’s potential value, but when the rubber meets the road, an unfunded mandate to be altruistic . . . does not prove highly attractive. <b>Introduced in order to reduce data friction, metadata creates its own kind of friction</b>.</div>
+						<p class="caption" style="text-align:right;color:black;">Edwards <i>et al</i>. 2011. <i>Social Studies of Science</i></p>
+					</section>
+					<section data-state="secondary">
+						<h1>Researcher</h1>
+						<h1>!=</h1>
+						<h1>Informatician</h1>
+					</section>
+					<section data-state="secondary">
+						<h1>Connections & design principles must be fleshed out.</h1>
 					</section>
 				</section>
 				<section id='case-study'>
 					<section>
 						<h1>Case Studies</h1>
+						<h2>Interdisciplinary research in Earth System Evolution</h2>
 					</section>
-				<section id='standards'>
-					<h1>Connecting Existing Standards</h1>
-					<svg width="960" height="600"></svg>
+					<section>
+						<object type="image/svg+xml" data="images/paleon_circle.svg" aria-label="A central circle, with the word PalEON, surrounded by smaller circles as before. This time fewer circles appear, highlighting the disciplines interacting within PalEON: Statistics, geography, climate modeling, ecology, paleoecology, and Earth sciences." width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section>
+						<ul id="buttons">
+							<li>Varying Concepts of Time</li>
+							<li>Varying Provenance</li>
+							<li>Varying Spatial Representation</li>
+							<li>Varying Applications</li>
+						</ul>
+					</section>
+					<section id="time-problem">
+						<h1>Concepts of Time Vary</h1>
+						<object type="image/svg+xml" data="images/time_problem.svg" aria-label="An image shows how representations of time in a single project may differ. Climate data from PRISM is aggregated on monthly scales with no temporal uncertainty, historical data may pre-date daylight savings time, some data may only be resolved to annual scales, and pollen data often has a method-specific uncertainty, so that discrete time intervals are not represented." width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section id="neotoma-lakes">
+						<object type="image/svg+xml" data="images/neotoma_lakes.svg" aria-label="A map of Neotoma lacustrine dataset sites in easthern Canada.  This image is intended to indicate that some sites are clearly overlaying lake sites, but others are not, some are near existing lakes, some are apparently not near lakes at all." width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
+					<section id="space-problem">
+						<object type="image/svg+xml" data="images/concepts_in_practice.svg" aria-label="This flow chart shows how spatial references in Neotoma (using colloquial site names and spatial references from high-quality GPS coordinates or from legacy DMS references) can be linked to various hydrogeographic data resources to provide support for higher quality analysis. Links for workflow are at http://neotomadb.github.io/neotoma_lakes/index.html" width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Making Connections Sustainable</h1>
+					</section>
+					<section id='standards'>	
+						<h1>Connecting Standards</h1>
+						<svg width="960" height="600"></svg>
+					</section>
+					<section>
+						<h1>Disciplinary Bridges</h1>
+						<object type="image/svg+xml" data="images/sustainable_connections.svg" aria-label="Two concepts, data resources linked with an example workflow." width="70%">
+							Your browser does not support SVG
+						</object>
+					</section>
 				</section>
 				<section id='conclusion'>Questions</section>
 			</div>
@@ -93,7 +144,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="js/d3/d3.js"></script>
 
 		<style>
 		.links line {
@@ -171,7 +222,7 @@
 		                    .text(function (d) { return d.id; })
 		                    .style("text-anchor", "middle")
 		                    .style("fill", "rgba(255,255,255,0.8)")
-		                    .style("font-family", "Raleway")
+		                    .style("font-family", "Raleway SemiBold")
 		                    .style("font-size", 12)
 		                    .style("filter","drop-shadow( 3px 3px 2px rgba(0,0,0,0.7) )");
 

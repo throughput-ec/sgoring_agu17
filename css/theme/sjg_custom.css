@@ -2,8 +2,22 @@
  * Customized Theme by Simon Goring based on the
  * Solarized Dark theme for reveal.js by Achim Staebler
  */
-@import url(../../lib/font/league-gothic/league-gothic.css);
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Raleway');
+
+@font-face {
+  font-family: 'Raleway SemiBold';
+  src: url('fonts/raleway/Raleway-SemiBold.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('fonts/raleway/Raleway-Medium.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url('fonts/arvo/Arvo-Regular.ttf')  format('truetype');
+}
+
 /**
  * Solarized colors by Ethan Schoonover
  */
@@ -93,7 +107,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  font-family: "EB Garamond";
+  font-family: "Arvo";
   font-variant: small-caps;
   font-weight: normal;
   line-height: 1.2;
@@ -101,11 +115,13 @@ body {
   text-shadow: none;
   word-wrap: break-word;
   opacity: 0.9;
-  text-shadow: .02em .02em #000D10;}
+  text-shadow: .02em .02em .02em  rgba(0,0,.3,0.6);
+}
 
 .reveal h1 {
-  font-size: 3.77em;
-  font-family: "Raleway"; }
+  font-size: 3em;
+  text-shadow: .02em .02em .02em rgba(0,0,.3,0.6);
+}
 
 .reveal h2 {
   font-size: 2.11em; }
@@ -115,9 +131,6 @@ body {
 
 .reveal h4 {
   font-size: 1em; }
-
-.reveal h1 {
-  text-shadow: none; }
 
 /*********************************************
  * OTHER
@@ -394,12 +407,22 @@ html.fifty .slide-background {
 /*  Secondary */
 
 html.secondary body {
+  text-align: left;
   background-color: #704c5e;
 }
 
 html.secondary h1 {
-    color: #ffffff;
+    color: rgba(1,1,1,0.7);
 }
+
+html.secondary h2 {
+  text-align: left;
+}
+
+html.secondary h3 {
+  text-align: left;
+}
+
 
 /*  Tertiary  */
 
@@ -408,5 +431,23 @@ html.tertiary body {
 }
 
 html.tertiary h1 {
-  color: #000000;
+  color: rgba(0,0,0,0.8);
+  text-shadow: .02em .02em .02em rgba(1,1,1,0.8);
+}
+
+html.tertiary ul {
+  color: rgba(20,20,20,0.7);
+  text-shadow: .02em .02em .02em rgba(.7,.7,.7,0.8);
+}
+
+html.tertiary blockquote {
+  color: rgba(20,20,20,0.7);
+  font-size: 1.5em;
+  text-align: left;
+  text-shadow: .02em .02em .02em rgba(.7,.7,.7,0.8);
+}
+
+
+html caption {
+  text-align: right;
 }
