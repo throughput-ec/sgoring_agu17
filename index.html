@@ -183,7 +183,7 @@
 
 		  var simulation = d3.forceSimulation()
 		      .force("link", d3.forceLink().id(function(d) { return d.id; }))
-		      .force("charge", d3.forceManyBody().strength(-200))
+		      .force("charge", d3.forceManyBody().strength(0))
 		      .force("center", d3.forceCenter(width / 2, height / 2));
 
 		  d3.json("data/locations.json", function(error, graph) {
@@ -197,14 +197,14 @@
 		        .attr("stroke-width", function(d) { return d.value * 2; })
 		        .attr("stroke", function(d) { return color(d.value); });
 
-		    link.append("title")
-		    	.text(function(d) { aa = 'transform' in d ? d['transform'] : null; return aa; });
+		    //link.append("title")
+		   // 	.text(function(d) { aa = 'transform' in d ? d['transform'] : null; return aa; });
 
 		    var node = svg.append("g")
 		        .attr("class", "nodes")
-		      .selectAll("circle")
-		      .data(graph.nodes)
-		      .enter().append("circle")
+		        .selectAll("circle")
+		        .data(graph.nodes)
+		        .enter().append("circle")
 		        .attr("r", function(d) { return 20 / d.group; })
 		        .attr("fill", function(d) { return color(d.group); })
 		        .call(d3.drag()
@@ -219,7 +219,7 @@
 		                    .data(graph.nodes)
 		                    .enter()
 		                    .append("text")
-		                    .text(function (d) { return d.id; })
+		                    .text(function (d) { return d.element; })
 		                    .style("text-anchor", "middle")
 		                    .style("fill", "rgba(255,255,255,0.8)")
 		                    .style("font-family", "Raleway SemiBold")
